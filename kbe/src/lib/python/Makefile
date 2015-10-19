@@ -27,7 +27,6 @@ include $(KBE_ROOT)/kbe/src/build/common.mak
 
 KBELIBDIR = $(KBE_ROOT)/kbe/src/libs
 KBE_PYTHONLIB = $(KBELIBDIR)/lib$(PYTHONLIB).a
-
 # === Variables set by makesetup ===
 
 MODOBJS=          Modules/_threadmodule.o  Modules/signalmodule.o  Modules/posixmodule.o  Modules/errnomodule.o  Modules/pwdmodule.o  Modules/_sre.o  Modules/_codecsmodule.o  Modules/_weakref.o  Modules/_functoolsmodule.o  Modules/_operator.o  Modules/_collectionsmodule.o  Modules/itertoolsmodule.o  Modules/atexitmodule.o  Modules/_stat.o  Modules/_localemodule.o  Modules/_iomodule.o Modules/iobase.o Modules/fileio.o Modules/bytesio.o Modules/bufferedio.o Modules/textio.o Modules/stringio.o  Modules/zipimport.o  Modules/faulthandler.o  Modules/_tracemalloc.o Modules/hashtable.o  Modules/symtablemodule.o  Modules/xxsubtype.o
@@ -37,8 +36,8 @@ MODLIBS=        $(LOCALMODLIBS) $(BASEMODLIBS)
 VERSION=	3.4
 srcdir=		.
 
-abs_srcdir=	.
-abs_builddir=	.
+abs_srcdir=	/root/work/kbengine/kbe/src/lib/python
+abs_builddir=	/root/work/kbengine/kbe/src/lib/python
 
 
 CC=		gcc -pthread
@@ -72,13 +71,13 @@ INSTALL_DATA=	${INSTALL} -m 644
 # Also, making them read-only seems to be a good idea...
 INSTALL_SHARED= ${INSTALL} -m 555
 
-MKDIR_P=	/bin/mkdir -p
+MKDIR_P=	/usr/bin/mkdir -p
 
 MAKESETUP=      $(srcdir)/Modules/makesetup
 
 # Compiler options
 OPT=		-DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes
-BASECFLAGS=	
+BASECFLAGS=	 -Wno-unused-result
 BASECPPFLAGS=	
 CONFIGURE_CFLAGS=	
 # CFLAGS_NODIST is used for building the interpreter and stdlib C extensions.
@@ -360,7 +359,7 @@ AST_ASDL=	$(srcdir)/Parser/Python.asdl
 
 ASDLGEN_FILES=	$(srcdir)/Parser/asdl.py $(srcdir)/Parser/asdl_c.py
 # XXX Note that a build now requires Python exist before the build starts
-ASDLGEN=	python3.4 $(srcdir)/Parser/asdl_c.py
+ASDLGEN=	python $(srcdir)/Parser/asdl_c.py
 
 ##########################################################################
 # Python

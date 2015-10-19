@@ -1,0 +1,17 @@
+Hybrid64/Box.o: Box.cpp G3D/Box.h \
+ /root/work/kbengine/kbe/src/lib/dependencies/g3dlite/G3D/platform.h \
+ /root/work/kbengine/kbe/src/lib/dependencies/g3dlite/G3D/Vector3.h \
+ /root/work/kbengine/kbe/src/lib/dependencies/g3dlite/G3D/g3dmath.h \
+ /root/work/kbengine/kbe/src/lib/dependencies/g3dlite/G3D/debug.h \
+ /root/work/kbengine/kbe/src/lib/dependencies/g3dlite/G3D/g3dmath.inl \
+ /root/work/kbengine/kbe/src/lib/dependencies/g3dlite/G3D/Vector2.h \
+ /root/work/kbengine/kbe/src/lib/dependencies/g3dlite/G3D/Vector2int16.h \
+ /root/work/kbengine/kbe/src/lib/dependencies/g3dlite/G3D/Vector2.inl \
+ /root/work/kbengine/kbe/src/lib/dependencies/g3dlite/G3D/Vector3.inl \
+ /root/work/kbengine/kbe/src/lib/dependencies/g3dlite/G3D/Array.h \
+ /root/work/kbengine/kbe/src/lib/dependencies/g3dlite/G3D/System.h \
+ /root/work/kbengine/kbe/src/lib/dependencies/g3dlite/G3D/Plane.h \
+ /root/work/kbengine/kbe/src/lib/dependencies/g3dlite/G3D/Vector4.h \
+ /root/work/kbengine/kbe/src/lib/dependencies/g3dlite/G3D/Vector4.inl \
+ G3D/debug.h G3D/Plane.h G3D/AABox.h G3D/CoordinateFrame.h \
+ /root/work/kbengine/kbe/src/lib/dependencies/g3dlite/G3D/Matrix3.h

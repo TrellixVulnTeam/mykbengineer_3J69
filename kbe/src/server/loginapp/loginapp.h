@@ -35,8 +35,7 @@ namespace KBEngine{
 
 class HTTPCBHandler;
 
-class Loginapp :	public ServerApp, 
-					public Singleton<Loginapp>
+class Loginapp : public ServerApp, public Singleton<Loginapp>
 {
 public:
 	enum TimeOutType

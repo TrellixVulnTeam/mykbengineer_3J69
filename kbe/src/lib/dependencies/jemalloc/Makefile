@@ -20,11 +20,12 @@ MANDIR := $(DESTDIR)/usr/local/share/man
 
 LIB =	jemalloc
 CONFIG_ARGS =
+#CONFIG_ARGS =--enable-debug --enable-prof --disable-optimize --enable-valgrind
 
-LIBDIR := $(KBE_ROOT)/kbe/src/libs
 ifndef KBE_ROOT
 export KBE_ROOT := $(subst /kbe/src/lib/dependencies/$(LIB),,$(CURDIR))
 endif
+LIBDIR := $(KBE_ROOT)/kbe/src/libs
 
 srcroot := 
 objroot := 
@@ -48,7 +49,7 @@ REV := 1
 install_suffix := 
 ABI := elf
 XSLTPROC := /usr/bin/xsltproc
-AUTOCONF := /usr/bin/autoconf
+AUTOCONF := false
 _RPATH = -Wl,-rpath,$(1)
 RPATH = $(if $(1),$(call _RPATH,$(1)))
 cfghdrs_in := include/jemalloc/jemalloc_defs.h.in include/jemalloc/internal/jemalloc_internal_defs.h.in include/jemalloc/internal/private_namespace.sh include/jemalloc/internal/private_unnamespace.sh include/jemalloc/internal/private_symbols.txt include/jemalloc/internal/public_namespace.sh include/jemalloc/internal/public_unnamespace.sh include/jemalloc/internal/size_classes.sh include/jemalloc/jemalloc_rename.sh include/jemalloc/jemalloc_mangle.sh include/jemalloc/jemalloc.sh test/include/test/jemalloc_test_defs.h.in
@@ -171,7 +172,7 @@ TESTS_INTEGRATION_OBJS := $(TESTS_INTEGRATION:$(srcroot)%.c=$(objroot)%.$(O))
 TESTS_STRESS_OBJS := $(TESTS_STRESS:$(srcroot)%.c=$(objroot)%.$(O))
 TESTS_OBJS := $(TESTS_UNIT_OBJS) $(TESTS_UNIT_AUX_OBJS) $(TESTS_INTEGRATION_OBJS) $(TESTS_STRESS_OBJS)
 
-.PHONY: all
+.PHONY: all dist build_doc_html build_doc_man build_doc
 .PHONY: install_bin install_include install_lib
 .PHONY: install_doc_html install_doc_man install_doc install
 .PHONY: tests check clean distclean relclean
